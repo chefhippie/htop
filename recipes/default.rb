@@ -17,6 +17,19 @@
 # limitations under the License.
 #
 
+case node["platform_family"]
+when "suse"
+  include_recipe "zypper"
+
+  zypper_repository node["htop"]["zypper"]["alias"] do
+    uri node["htop"]["zypper"]["repo"]
+    key node["htop"]["zypper"]["key"]
+    title node["htop"]["zypper"]["title"]
+
+    action :add
+  end
+end
+
 node["htop"]["packages"].each do |name|
   package name do
     action :install
