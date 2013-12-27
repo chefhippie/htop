@@ -22,7 +22,7 @@ default["htop"]["packages"] = %w(
   nmon
 )
 
-default["htop"]["zypper"]["title"] = "network-utilities"
+default["htop"]["zypper"]["alias"] = "network-utilities"
 default["htop"]["zypper"]["title"] = "Network Utilities"
 default["htop"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/network:/utilities/openSUSE_#{node["platform_version"] == "12.1" ? "12.3" : node["platform_version"]}/"
 default["htop"]["zypper"]["key"] = "#{node["htop"]["zypper"]["repo"]}repodata/repomd.xml.key"
