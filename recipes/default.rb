@@ -27,6 +27,10 @@ when "suse"
     title node["htop"]["zypper"]["title"]
 
     action :add
+
+    only_if do
+      node["htop"]["zypper"]["enabled"]
+    end
   end
 end
 
