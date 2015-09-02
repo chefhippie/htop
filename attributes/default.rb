@@ -25,5 +25,5 @@ default["htop"]["packages"] = %w(
 default["htop"]["zypper"]["enabled"] = true
 default["htop"]["zypper"]["alias"] = "network-utilities"
 default["htop"]["zypper"]["title"] = "Network Utilities"
-default["htop"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/network:/utilities/openSUSE_#{node["platform_version"]}/"
+default["htop"]["zypper"]["repo"] = "http://download.opensuse.org/repositories/network:/utilities/openSUSE_#{node["platform_version"].to_i.to_s == node["platform_version"] ? "Factory" : node["platform_version"]}/"
 default["htop"]["zypper"]["key"] = "#{node["htop"]["zypper"]["repo"]}repodata/repomd.xml.key"
